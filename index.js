@@ -1,6 +1,6 @@
 const timeData = require('./data')
-// const smaData = require('./sma')
-// const getBbands = require('./bbands').getBbands
+const smaData = require('./sma')
+const bandsData = require('./bbands')
 
 //Getting data
 timeData.getData().then(data => {
@@ -15,6 +15,5 @@ timeData.getData().then(data => {
   console.log(newData)
 })
 
-// Calling Indicatiors
-// smaData.then(res => console.log(res))
-// getBbands.then(res => console.log(res))
+smaData.getSMA().then(data => console.log(data))
+bandsData.getBbands().then(data => console.log(data))

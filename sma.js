@@ -16,12 +16,10 @@ const query = querystring.stringify(PARAMS)
 
 async function getSMA() {
   console.log('Calling SMA API...')
-  const data = await axios
-    .get(process.env.BASE_URL + query)
-    .then(response => response.data)
+  const response = await axios.get(process.env.BASE_URL + query)
+  const data = response.data
+  console.log(data)
   return data
 }
 
-const smaData = getSMA()
-
-module.exports.smaData = smaData
+module.exports.getSMA = getSMA

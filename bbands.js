@@ -16,12 +16,10 @@ const query = querystring.stringify(PARAMS)
 
 async function getBbands() {
   console.log('Calling BBands API...')
-  const data = await axios
-    .get(process.env.BASE_URL + query)
-    .then(res => console.log(res.data))
+  const response = await axios.get(process.env.BASE_URL + query)
+  const data = response.data
+  console.log(data)
   return data
 }
 
-const bBandsData = getBbands()
-
-module.exports.getBbands = bBandsData
+module.exports.getBbands = getBbands
