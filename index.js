@@ -15,17 +15,20 @@ app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`))
 cron.schedule('* * * * *', function() {
   console.log('Start Cron Job')
   //Getting data
-  timeData.getData().then(data => {
-    const parseData = Object.entries(data)
+  timeData
+    .getData()
+    .then(data => {
+      const parseData = Object.entries(data)
 
-    console.log('---------- PARSING DATA ----------')
+      console.log('---------- PARSING DATA ----------')
 
-    const newData = parseData.map(candle => {
-      return candle[1]['4. close']
+      const newData = parseData.map(candle => {
+        return candle[1]['4. close']
+      })
+
+      // console.log(newData)
     })
-
-    // console.log(newData)
-  })
+    .catch(err => console.log(error))
 
   //   smaData.getSMA().then(data => console.log(data))
   //   bandsData.getBbands().then(data => console.log(data))
