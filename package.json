@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Trading strategy test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
