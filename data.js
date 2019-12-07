@@ -13,13 +13,13 @@ const PARAMS = {
 const query = querystring.stringify(PARAMS)
 
 async function getData() {
-  console.log('Calling Data API...')
+  console.log(`Fetching ${PARAMS.symbol} stock data...`)
   const response = await axios.get(process.env.BASE_URL + query)
   console.log('Fetch info: ' + response.data['Meta Data']['1. Information'])
   console.log('----------------------------------------------------------')
 
   const data = response.data[`Time Series (${PARAMS.interval})`]
-  console.log(data)
+  //   console.log(data)
   return data
 }
 
